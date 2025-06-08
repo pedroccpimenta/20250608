@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Imagem de Fundo Centralizada</title>
+<style>
+        body {
+           background-image: url('./pics/bg2.png'); /* Caminho da imagem */
+            background-position: center center;    /* Centraliza a imagem horizontal e verticalmente */
+      		background-repeat: repeat-y;
+            background-size: contain;             /* Faz com que a imagem caiba completamente na altura da viewport */
+
+            /* Opcional: Garante que o body ocupe toda a altura da janela, mesmo com pouco conteúdo */
+            min-height: 100vh;
+            margin: 0; /* Remove margens padrão do body para evitar barras de rolagem indesejadas */
+            padding: 0; /* Remove preenchimento padrão do body */
+
+            /* Opcional: Cor de fundo para preencher o espaço não coberto pela imagem */
+            background-color: #f0f0f0; /* Um cinzento claro, por exemplo */
+            filter: grayscale();
+     
+        }
+    </style>
+
+<script>
+ala=[	'Alberto Castillo - Violetas',
+		'Astor Piazzolla - Balada para un loco',
+		'Billy Joel - The River of Dreams',
+		'Bobby Solo - Zingara',
+		'Cafe Accordion Orchestra - Milou de Paname',
+		'Carlos di Sarli - El Ingeniero',
+		'Carlos Di Sarli - Navegante',
+		'Carlos di Sarli - Nueve puntos',
+		'Carlos Di Sarli - Tus palabras y la noche',
+		'Carlos Gardel - Caminito',
+		'Carlos Gardel - Volver',
+		'Carlos Paredes - Melodia nº 2',
+		'Cyrille Aimée - Young at Heart',
+		'Dulce Pontes - Porto',
+		'Edgardo Donato - Alas Rotas',
+		'Edgardo Donato - Gato',
+		'Eric Idle - Always Look On The Bright Side Of Life',
+		'Etta James Style - Love Ballads Collection',
+		'Francisco Canaro - Casas viejas',
+		'Francisco Canaro - La Milonga de Buenos Aires',
+		'Francisco Canaro - La Vida Se Va',
+		'Francisco Canaro - Palomita blanca',
+		'Francisco Canaro - Poema',
+		'Francisco Canaro - Tu y Yo',
+		'Gene Kelly - Singin  in the Rain',
+		'Giovana - Beijo Sabor Cerejeira',
+		'John Lennon - Imagine',
+		'Juan Canaro - Santa Paula',
+		"Juan d'Arienzo - Felicia",
+		'Julio Jaramillo - Odiame',
+		'Los Provincianos - Junto al mar',
+		'Los Tuba Tango - Zorro Gris',
+		'Louis Armstrong - What A Wonderful World',
+		'Manuel Freire - Pedra Filosofal',
+		'Manuel Pizarro - La espuela',
+		'Miguel Calò - Portero suba y diga',
+		'Milton Nascimento - Canção da América',
+		'Mitili FLK - Scjaraçule maraçule',
+		'Nat King Cole - Unforgettable',
+		'Orquesta Tipica Porteña - Confession',
+		'OTV - Adiós Argentina',
+		'OTV - Che papusa oí',
+		'OTV - Que Ranada',
+		'Pedro Laurenz - Vieja amiga',
+		'Pink Floyd - Another brick in the wall',
+		'The Beatles - Yellow Submarine',	
+		'Ricardo Luis Brignolo - Asómate a la ventana',
+		'Ricardo Tanturi - La Mesa De Un Café',
+		'SR - Welcome To Brixton',
+		'The Beatles - Yellow Submarine',
+		'The Greatest Showman - A Million Dreams',
+		'Vaya Con Dios - Time Flies',
+		'Manuel Pizarro - La espuela'
+
+	]
+
+function ancora()
+{	
+	ala.sort(() => Math.random() - 0.5);
+	console.log(ala)
+//	document.getElementById('a1').src='./mp3/'+ala[0]+'.mp3'
+	document.getElementById('a1').src='./mp3/'+ala[2]+'.mp3'
+	document.getElementById('a1').title=ala[2]
+
+	cl=document.getElementById('las')
+	for (el in ala)
+	{
+		eel = document.createElement("LI")
+		eel.innerHTML=ala[el]
+		eel.onclick = function() {
+            playthis(this.innerHTML);
+        };
+		cl.appendChild(eel)
+	}
+
+
+}	
+
+function playthis(x)
+{	fa=	'./mp3/'+x+'.mp3'
+	console.log(fa)
+	document.getElementById('a1').src='./mp3/'+x+'.mp3'
+	document.getElementById('a1').play()
+	document.getElementById('a1').title=x
+
+	document.getElementById('lege').value=x
+}
+</script>
+
+</head>
+<body align=center onload="ancora()" style='font-family:roboto;font-size: 11px;font-weight: bold;'>
+
+	<div style="background-color: white;">
+	   <audio id=a1 controls style='max-width: 250px;height: 53px;'>
+        <source src="" type="audio/mpeg">
+        your browser do not support audio elements - please try with another browser. 
+    </audio>
+    <input type=text id=lege style='max-width: 250px;' style='font-family: verdana;font-size: 10px;' value='... playing...'>
+    <hr color=lime>
+</div>
+    <ul id=las style='list-style-type: none;margin: 0;padding: 0;'>
+    	<!--
+    	<li onclick='playthis(this.innerHTML);'>John Lennon - Imagine</li>
+    	-->
+    </ul>
+    <hr color=lime>
+    most tunes downloaded from youtube with <a href='https://yt5s.biz/enxj101/' target='*'>yt5s.biz</a>.
+
+
+</body>
+<script>
+</script>
+
+</html>
