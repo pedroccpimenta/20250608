@@ -96,7 +96,7 @@ ala=[
 function ancora()
 {	
 	ala.sort(() => Math.random() - 0.5);
-	console.log(ala)
+	//console.log(ala)
 	document.getElementById('a1').src='./mp3/'+ala[2]+'.mp3'
 	document.getElementById('a1').title=ala[2]
 
@@ -125,9 +125,10 @@ function blink()
 	for (const child of cl.children) {
         if (child.innerHTML==document.getElementById('lege').value)
         {	
-	        console.log(child.textContent); // Exibe o texto de cada <li>
+	        /* console.log(child.textContent); // Exibe o texto de cada <li>
 	        console.log(document.getElementById('lege').value)
 	        console.log(child.style.backgroundColor)
+	        */
 	        if ( child.style.backgroundColor == kolors[0])
 	        {
 	        	child.style.backgroundColor = kolors[1]; // Exemplo: muda a cor de fundo
