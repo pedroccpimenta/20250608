@@ -25,13 +25,12 @@
             /* Opcional: Cor de fundo para preencher o espaço não coberto pela imagem */
             background-color: #f0f0f0; /* Um cinzento claro, por exemplo */
             filter: grayscale();
-     
         }
     </style>
 
 <script>
 ala=[	
-		'Alberto Castillo - Violetas',
+		'Alberto Castillo - Violetas ',
 		'Alphaville - Forever Young',
 		'Ana Moura - Tens Os Olhos De Deus',
 		'Anibal Troilo - Te Aconsejo Que Me Dejes',
@@ -44,7 +43,7 @@ ala=[
 		'Carlos di Sarli - El Ingeniero',
 		'Carlos Di Sarli - Navegante',
 		'Carlos di Sarli - Nueve puntos',
-		'Carlos Di Sarli - Tus palabras y la noche',
+		'Carlos Di Sarli - Tus palabras y la noche ',
 		'Carlos Gardel - Caminito',
 		'Carlos Gardel - Volver',
 		'Carlos Paredes - Melodia nº 2',
@@ -98,7 +97,6 @@ function ancora()
 {	
 	ala.sort(() => Math.random() - 0.5);
 	console.log(ala)
-//	document.getElementById('a1').src='./mp3/'+ala[0]+'.mp3'
 	document.getElementById('a1').src='./mp3/'+ala[2]+'.mp3'
 	document.getElementById('a1').title=ala[2]
 
@@ -112,7 +110,43 @@ function ancora()
         };
 		cl.appendChild(eel)
 	}
+
+	setInterval(blink, 535);
+
 }	
+
+var kolors=['orange', 'yellow'];
+//kolors=['red', 'yellow'];
+kolors=['white', 'black'];
+
+function blink()
+{	
+	cl=document.getElementById('las')
+	for (const child of cl.children) {
+        if (child.innerHTML==document.getElementById('lege').value)
+        {	
+	        console.log(child.textContent); // Exibe o texto de cada <li>
+	        console.log(document.getElementById('lege').value)
+	        console.log(child.style.backgroundColor)
+	        if ( child.style.backgroundColor == kolors[0])
+	        {
+	        	child.style.backgroundColor = kolors[1]; // Exemplo: muda a cor de fundo
+	        	child.style.color = kolors[0]; // Exemplo: muda a cor de fundo
+	        	//child.style.width = '50%'; // Exemplo: muda a cor de fundo
+	    	}
+	    	else
+	    	{
+	        	child.style.backgroundColor = kolors[0]; // Exemplo: muda a cor de fundo
+	        	child.style.color = kolors[1]; // Exemplo: muda a cor de fundo
+	    	}
+       	}
+       	else 
+       	{
+	        child.style.backgroundColor = ''; // Exemplo: muda a cor de fundo
+	        child.style.color = 'black'; // Exemplo: muda a cor de fundo
+       	}
+    }
+}
 
 function playthis(x)
 {	fa=	'./mp3/'+x+'.mp3'
